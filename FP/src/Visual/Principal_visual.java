@@ -58,6 +58,7 @@ public class Principal_visual extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		
 		Panel panel = new Panel();
 		panel.setBackground(new Color(70, 130, 180));
 		panel.setBounds(0, 0, 765, 80);
