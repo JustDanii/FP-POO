@@ -2,6 +2,8 @@ package Logico;
 
 import java.util.Date;
 
+//klk
+
 public class Cita {
 
 	private Paciente paciente;
