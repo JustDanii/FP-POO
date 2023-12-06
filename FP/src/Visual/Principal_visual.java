@@ -157,10 +157,16 @@ public class Principal_visual extends JFrame {
 		
 		JButton button_3 = new JButton("");
 		button_3.setIcon(new ImageIcon(Principal_visual.class.getResource("/Visual/images/6711415 (1).png")));
-		button_3.setBounds(259, 268, 154, 115);
+		button_3.setBounds(259, 267, 154, 115);
 		contentPane.add(button_3);
 		
 		JButton button_4 = new JButton("");
+		button_4.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Listar_Pacientes lpac = new Listar_Pacientes();
+				lpac.setVisible(true);
+			}
+		});
 		button_4.setIcon(new ImageIcon(Principal_visual.class.getResource("/Visual/images/list-icon-png_265066__1_-removebg-preview.png")));
 		button_4.setBounds(486, 268, 154, 114);
 		contentPane.add(button_4);
