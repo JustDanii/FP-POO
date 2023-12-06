@@ -67,8 +67,8 @@ public class Login extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				dispose();
 				
-				Principal_visual principal_visual = new Principal_visual();
-				principal_visual.setVisible(true);
+				P_visual p_visual = new P_visual();
+				p_visual.setVisible(true);
 			}
 		});
 		btn_login.setForeground(new Color(240, 248, 255));

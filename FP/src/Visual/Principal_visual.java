@@ -1,195 +1,149 @@
 package Visual;
 
+import java.awt.Color;
 import java.awt.EventQueue;
+import java.awt.Panel;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.util.Date;
+
+import javax.swing.AbstractButton;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import java.awt.Panel;
-import java.awt.Color;
-import javax.swing.JMenuItem;
-import javax.swing.JButton;
-import javax.swing.ImageIcon;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
-import java.awt.Button;
-import javax.swing.JLabel;
-import java.awt.Font;
-import javax.swing.JTextField;
-import javax.swing.JTextPane;
-import java.awt.event.ActionListener;
-import java.awt.event.ActionEvent;
 
+import com.toedter.calendar.JCalendar;
+import java.awt.GridLayout;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
+import javax.swing.JTextField;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
+import javax.swing.border.CompoundBorder;
+import java.awt.Window.Type;
 
 public class Principal_visual extends JFrame {
 
+	private JTextField txtFecha;
 	private JPanel contentPane;
+    private JCalendar calendar;
 
-	
-	//cambios
-	
-	
-	/**
-	 * Launch the application.
-	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					Principal_visual frame = new Principal_visual();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+    public static void main(String[] args) {
+        EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                try {
+                    Principal_visual frame = new Principal_visual();
+                    frame.setVisible(true);
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+        });
+    }
 
-	/**
-	 * Create the frame.
-	 */
-	public Principal_visual() {
-		setTitle("Principal");
-		setType(Type.UTILITY);
-		setResizable(false);
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 771, 439);
-		contentPane = new JPanel();
-		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
-		setContentPane(contentPane);
-		contentPane.setLayout(null);
-		
-		
-		Panel panel = new Panel();
-		panel.setBackground(new Color(64, 224, 208));
-		panel.setBounds(0, 0, 765, 80);
-		contentPane.add(panel);
-		panel.setLayout(null);
-		
-		JLabel lblNewLabel_3 = new JLabel("");
-		lblNewLabel_3.setForeground(new Color(255, 255, 255));
-		lblNewLabel_3.setIcon(new ImageIcon(Principal_visual.class.getResource("/Visual/images/equipo-medico.png")));
-		lblNewLabel_3.setBounds(32, 0, 88, 80);
-		panel.add(lblNewLabel_3);
-		
-		JTextPane txtpnCodigo = new JTextPane();
-		txtpnCodigo.setEditable(false);
-		txtpnCodigo.setText("Codigo:");
-		txtpnCodigo.setBackground(new Color(64, 224, 208));
-		txtpnCodigo.setBounds(135, 16, 133, 26);
-		panel.add(txtpnCodigo);
-		
-		JTextPane textPane_1 = new JTextPane();
-		textPane_1.setEditable(false);
-		textPane_1.setForeground(new Color(0, 0, 0));
-		textPane_1.setBackground(new Color(64, 224, 208));
-		textPane_1.setBounds(135, 38, 133, 26);
-		panel.add(textPane_1);
-		
-		JTextPane txtpnNombre = new JTextPane();
-		txtpnNombre.setEditable(false);
-		txtpnNombre.setText("Nombre:");
-		txtpnNombre.setBackground(new Color(64, 224, 208));
-		txtpnNombre.setBounds(308, 16, 133, 26);
-		panel.add(txtpnNombre);
-		
-		JTextPane txtpnMorfe = new JTextPane();
-		txtpnMorfe.setEditable(false);
-		txtpnMorfe.setBackground(new Color(64, 224, 208));
-		txtpnMorfe.setBounds(308, 38, 116, 26);
-		panel.add(txtpnMorfe);
-		
-		JButton btnNewButton_2 = new JButton("Cerrar Sesion ");
-		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton_2.setBackground(new Color(255, 0, 0));
-		btnNewButton_2.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				login log = new login();
-				log.setVisible(false);
-				dispose();
-			}
-		});
-		btnNewButton_2.setBounds(600, 25, 133, 29);
-		panel.add(btnNewButton_2);
-		
-		Panel panel_1 = new Panel();
-		panel_1.setBounds(0, 79, 141, 331);
-		contentPane.add(panel_1);
-		panel_1.setLayout(null);
-		panel_1.setBackground(new Color(240, 255, 240));
-		
-		JButton btnNewButton_1 = new JButton("Administracion");
-		btnNewButton_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Menu_Administracion admin = new Menu_Administracion();
-				admin.setVisible(true);
-			}
-		});
-		btnNewButton_1.setBackground(new Color(64, 224, 208));
-		btnNewButton_1.setBounds(0, 161, 141, 29);
-		panel_1.add(btnNewButton_1);
-		
-		JButton btnConsulta = new JButton("Consulta");
-		btnConsulta.setBackground(new Color(64, 224, 208));
-		btnConsulta.setBounds(0, 105, 141, 29);
-		panel_1.add(btnConsulta);
-		
-		JButton btnNewButton = new JButton("");
-		btnNewButton.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Crear_Cita cita = new Crear_Cita();
-				cita.setVisible(true);
-			}
-		});
-		btnNewButton.setIcon(new ImageIcon(Principal_visual.class.getResource("/Visual/images/6711415 (1).png")));
-		btnNewButton.setBounds(259, 115, 154, 114);
-		contentPane.add(btnNewButton);
-		
-		JButton button_1 = new JButton("");
-		button_1.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Lista_Citas citas = new Lista_Citas();
-				citas.setVisible(true);
-			}
-		});
-		button_1.setIcon(new ImageIcon(Principal_visual.class.getResource("/Visual/images/list-icon-png_265066__1_-removebg-preview.png")));
-		button_1.setBounds(486, 115, 154, 114);
-		contentPane.add(button_1);
-		
-		JButton button_3 = new JButton("");
-		button_3.setIcon(new ImageIcon(Principal_visual.class.getResource("/Visual/images/6711415 (1).png")));
-		button_3.setBounds(259, 267, 154, 115);
-		contentPane.add(button_3);
-		
-		JButton button_4 = new JButton("");
-		button_4.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				Listar_Pacientes lpac = new Listar_Pacientes();
-				lpac.setVisible(true);
-			}
-		});
-		button_4.setIcon(new ImageIcon(Principal_visual.class.getResource("/Visual/images/list-icon-png_265066__1_-removebg-preview.png")));
-		button_4.setBounds(486, 268, 154, 114);
-		contentPane.add(button_4);
-		
-		JLabel lblNewLabel = new JLabel("Agregar Cita");
-		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblNewLabel.setBounds(286, 86, 98, 20);
-		contentPane.add(lblNewLabel);
-		
-		JLabel lblAgregarPaciente = new JLabel("Agregar Paciente");
-		lblAgregarPaciente.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblAgregarPaciente.setBounds(269, 234, 141, 20);
-		contentPane.add(lblAgregarPaciente);
-		
-		JLabel lblNewLabel_1 = new JLabel("Listar Citas\r\n");
-		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblNewLabel_1.setBounds(517, 86, 91, 20);
-		contentPane.add(lblNewLabel_1);
-		
-		JLabel lblNewLabel_2 = new JLabel("Listar Pacientes");
-		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblNewLabel_2.setBounds(496, 234, 125, 20);
-		contentPane.add(lblNewLabel_2);
-	}
+    public Principal_visual() {
+        setTitle("Principal");
+        setType(Type.UTILITY);
+        setResizable(false);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBounds(100, 100, 1213, 535);
+        contentPane = new JPanel();
+        contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+        setContentPane(contentPane);
+        contentPane.setLayout(null);
 
+        Panel p_header = new Panel();
+        p_header.setBackground(new Color(30, 144, 255));
+        p_header.setBounds(0, 0, 1209, 80);
+        contentPane.add(p_header);
+        p_header.setLayout(null);
+
+        JButton button = new JButton("");
+        button.setIcon(new ImageIcon("C:\\Users\\Mr\\git\\ProyectoFinal\\FinalProyect\\src\\images\\equipo-medico.png"));
+        button.setForeground(Color.WHITE);
+        button.setBackground(Color.WHITE);
+        button.setBounds(10, 0, 97, 80);
+        p_header.add(button);
+        
+        JLabel lbl_name = new JLabel("Clinica Medica Jose Daniel");
+        lbl_name.setFont(new Font("Rockwell", Font.PLAIN, 38));
+        lbl_name.setHorizontalAlignment(SwingConstants.CENTER);
+        lbl_name.setBounds(132, 11, 1067, 58);
+        p_header.add(lbl_name);
+
+        Panel P_menu = new Panel();
+        P_menu.setBounds(0, 79, 116, 427);
+        contentPane.add(P_menu);
+        P_menu.setLayout(null);
+        P_menu.setBackground(new Color(220, 220, 220));
+
+        JMenuItem MI_ini = new JMenuItem("SESION");
+        MI_ini.addActionListener(new ActionListener() {
+        	public void actionPerformed(ActionEvent e) {
+        		dispose();
+				
+				Login login = new Login();
+				login.setVisible(true);
+        	}
+        });
+        MI_ini.setSelected(true);
+        MI_ini.setBackground(new Color(192, 192, 192));
+        MI_ini.setBounds(0, 0, 116, 38);
+        P_menu.add(MI_ini);
+        MI_ini.setIcon(new ImageIcon("C:\\Users\\Mr\\git\\ProyectoFinal\\FinalProyect\\src\\images\\casa.png"));
+
+        JMenuItem MI_pa = new JMenuItem("PACIENTES");
+        MI_pa.setBackground(new Color(192, 192, 192));
+        MI_pa.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Paciente paciente = new Paciente();
+                paciente.setVisible(true);
+            }
+        });
+        MI_pa.setIcon(new ImageIcon("C:\\Users\\Mr\\git\\ProyectoFinal\\FinalProyect\\src\\images\\grupo-de-chat.png"));
+        MI_pa.setBounds(0, 38, 116, 38);
+        P_menu.add(MI_pa);
+
+        JMenuItem MI_doc = new JMenuItem("DOCTORES");
+        MI_doc.setSelected(true);
+        MI_doc.setBackground(new Color(192, 192, 192));
+        MI_doc.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                Doctor doctor = new Doctor();
+                doctor.setVisible(true);
+            }
+        });
+        MI_doc.setIcon(new ImageIcon("C:\\Users\\Mr\\git\\ProyectoFinal\\FinalProyect\\src\\images\\doctor.png"));
+        MI_doc.setBounds(0, 76, 116, 38);
+        P_menu.add(MI_doc);
+
+        JPanel P_calendario = new JPanel();
+        P_calendario.setBounds(115, 79, 1094, 425);
+        contentPane.add(P_calendario);
+        P_calendario.setLayout(null);
+        
+        calendar = new JCalendar();
+        calendar.getDayChooser().setDecorationBackgroundColor(Color.WHITE);
+        calendar.getDayChooser().setAlwaysFireDayProperty(false);
+        calendar.getDayChooser().setDecorationBordersVisible(true);
+        calendar.setWeekdayForeground(Color.BLACK);
+        calendar.getDayChooser().getDayPanel().setBackground(new Color(192, 192, 192));
+        calendar.setTodayButtonVisible(true);
+        calendar.setWeekOfYearVisible(false);
+        calendar.setSundayForeground(new Color(0, 0, 0));
+        calendar.setBorder(new CompoundBorder());
+        calendar.setDecorationBackgroundColor(Color.WHITE);
+        calendar.setDecorationBordersVisible(true);
+        calendar.getYearChooser().getSpinner().setFont(new Font("Copperplate Gothic Light", Font.PLAIN, 16));
+        calendar.getMonthChooser().getComboBox().setFont(new Font("Copperplate Gothic Light", Font.PLAIN, 16));
+        GridLayout gridLayout = (GridLayout) calendar.getDayChooser().getDayPanel().getLayout();
+        calendar.setBounds(10, 11, 1063, 403);
+        P_calendario.add(calendar);
+    }
 }
