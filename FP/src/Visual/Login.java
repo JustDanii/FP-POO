@@ -108,7 +108,7 @@ public class Login extends JFrame {
 		JButton btnpass = new JButton("");
 		btnpass.setEnabled(false);
 		btnpass.setBackground(new Color(128, 0, 0));
-		btnpass.setIcon(new ImageIcon("C:\\Users\\Mr\\git\\ProyectoFinal\\FinalProyect\\src\\images\\llave.png"));
+		btnpass.setIcon(new ImageIcon(Login.class.getResource("/Visual/images/llave.png")));
 		btnpass.setBounds(70, 182, 50, 50);
 		contentPane.add(btnpass);
 		
@@ -116,7 +116,7 @@ public class Login extends JFrame {
 		btn_user.setEnabled(false);
 		btn_user.setSelectedIcon(new ImageIcon("C:\\Users\\Mr\\Downloads\\avatar (1).png"));
 		btn_user.setForeground(new Color(0, 0, 0));
-		btn_user.setIcon(new ImageIcon("C:\\Users\\Mr\\git\\ProyectoFinal\\FinalProyect\\src\\images\\avatar (1).png"));
+		btn_user.setIcon(new ImageIcon(Login.class.getResource("/Visual/images/avatar (1).png")));
 		btn_user.setBackground(new Color(128, 0, 0));
 		btn_user.setBounds(70, 116, 50, 50);
 		contentPane.add(btn_user);
@@ -124,7 +124,7 @@ public class Login extends JFrame {
 		JButton btn_icon = new JButton("");
 		btn_icon.setForeground(new Color(30, 144, 255));
 		btn_icon.setBackground(new Color(30, 144, 255));
-		btn_icon.setIcon(new ImageIcon("C:\\Users\\Mr\\git\\ProyectoFinal\\FinalProyect\\src\\images\\usuario (1).png"));
+		btn_icon.setIcon(new ImageIcon(Login.class.getResource("/Visual/images/usuario (1).png")));
 		btn_icon.setBounds(149, 11, 97, 82);
 		contentPane.add(btn_icon);
 	}

@@ -13,6 +13,7 @@ import java.awt.Font;
 import javax.swing.JTextPane;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 
 public class P_visual extends JFrame {
@@ -47,7 +48,7 @@ public class P_visual extends JFrame {
 		setType(Type.UTILITY);
 		setResizable(false);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 771, 439);
+		setBounds(100, 100, 1231, 533);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -55,47 +56,49 @@ public class P_visual extends JFrame {
 		
 		
 		Panel panel = new Panel();
-		panel.setBackground(new Color(64, 224, 208));
-		panel.setBounds(0, 0, 765, 80);
+		panel.setBackground(new Color(0, 191, 255));
+		panel.setBounds(0, 0, 1215, 113);
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
 		JLabel lblNewLabel_3 = new JLabel("");
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_3.setForeground(new Color(255, 255, 255));
 		lblNewLabel_3.setIcon(new ImageIcon(P_visual.class.getResource("/Visual/images/equipo-medico.png")));
-		lblNewLabel_3.setBounds(32, 0, 88, 80);
+		lblNewLabel_3.setBounds(15, 5, 109, 102);
 		panel.add(lblNewLabel_3);
 		
 		JTextPane txtpnCodigo = new JTextPane();
 		txtpnCodigo.setEditable(false);
 		txtpnCodigo.setText("Codigo:");
-		txtpnCodigo.setBackground(new Color(64, 224, 208));
-		txtpnCodigo.setBounds(135, 16, 133, 26);
+		txtpnCodigo.setBackground(new Color(0, 191, 255));
+		txtpnCodigo.setBounds(376, 32, 133, 20);
 		panel.add(txtpnCodigo);
 		
 		JTextPane textPane_1 = new JTextPane();
 		textPane_1.setEditable(false);
 		textPane_1.setForeground(new Color(0, 0, 0));
-		textPane_1.setBackground(new Color(64, 224, 208));
-		textPane_1.setBounds(135, 38, 133, 26);
+		textPane_1.setBackground(new Color(0, 191, 255));
+		textPane_1.setBounds(376, 54, 133, 26);
 		panel.add(textPane_1);
 		
 		JTextPane txtpnNombre = new JTextPane();
 		txtpnNombre.setEditable(false);
 		txtpnNombre.setText("Nombre:");
-		txtpnNombre.setBackground(new Color(64, 224, 208));
-		txtpnNombre.setBounds(308, 16, 133, 26);
+		txtpnNombre.setBackground(new Color(0, 191, 255));
+		txtpnNombre.setBounds(635, 32, 133, 20);
 		panel.add(txtpnNombre);
 		
 		JTextPane txtpnMorfe = new JTextPane();
 		txtpnMorfe.setEditable(false);
-		txtpnMorfe.setBackground(new Color(64, 224, 208));
-		txtpnMorfe.setBounds(308, 38, 116, 26);
+		txtpnMorfe.setBackground(new Color(0, 191, 255));
+		txtpnMorfe.setBounds(635, 54, 116, 26);
 		panel.add(txtpnMorfe);
 		
 		JButton btnNewButton_2 = new JButton("Cerrar Sesion ");
+		btnNewButton_2.setForeground(Color.RED);
 		btnNewButton_2.setFont(new Font("Tahoma", Font.BOLD, 14));
-		btnNewButton_2.setBackground(new Color(255, 0, 0));
+		btnNewButton_2.setBackground(Color.BLACK);
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Login log = new Login();
@@ -103,11 +106,11 @@ public class P_visual extends JFrame {
 				dispose();
 			}
 		});
-		btnNewButton_2.setBounds(600, 25, 133, 29);
+		btnNewButton_2.setBounds(1072, 23, 133, 29);
 		panel.add(btnNewButton_2);
 		
 		Panel panel_1 = new Panel();
-		panel_1.setBounds(0, 79, 141, 331);
+		panel_1.setBounds(0, 113, 207, 391);
 		contentPane.add(panel_1);
 		panel_1.setLayout(null);
 		panel_1.setBackground(new Color(240, 255, 240));
@@ -120,12 +123,12 @@ public class P_visual extends JFrame {
 			}
 		});
 		btnNewButton_1.setBackground(new Color(64, 224, 208));
-		btnNewButton_1.setBounds(0, 161, 141, 29);
+		btnNewButton_1.setBounds(0, 190, 207, 29);
 		panel_1.add(btnNewButton_1);
 		
 		JButton btnConsulta = new JButton("Consulta");
 		btnConsulta.setBackground(new Color(64, 224, 208));
-		btnConsulta.setBounds(0, 105, 141, 29);
+		btnConsulta.setBounds(0, 134, 207, 29);
 		panel_1.add(btnConsulta);
 		
 		JButton btnNewButton = new JButton("");
@@ -136,7 +139,7 @@ public class P_visual extends JFrame {
 			}
 		});
 		btnNewButton.setIcon(new ImageIcon(P_visual.class.getResource("/Visual/images/6711415 (1).png")));
-		btnNewButton.setBounds(259, 115, 154, 114);
+		btnNewButton.setBounds(472, 183, 154, 114);
 		contentPane.add(btnNewButton);
 		
 		JButton button_1 = new JButton("");
@@ -147,12 +150,12 @@ public class P_visual extends JFrame {
 			}
 		});
 		button_1.setIcon(new ImageIcon(P_visual.class.getResource("/Visual/images/list-icon-png_265066__1_-removebg-preview.png")));
-		button_1.setBounds(486, 115, 154, 114);
+		button_1.setBounds(699, 183, 154, 114);
 		contentPane.add(button_1);
 		
 		JButton button_3 = new JButton("");
 		button_3.setIcon(new ImageIcon(P_visual.class.getResource("/Visual/images/6711415 (1).png")));
-		button_3.setBounds(259, 267, 154, 115);
+		button_3.setBounds(472, 335, 154, 115);
 		contentPane.add(button_3);
 		
 		JButton button_4 = new JButton("");
@@ -163,28 +166,27 @@ public class P_visual extends JFrame {
 			}
 		});
 		button_4.setIcon(new ImageIcon(P_visual.class.getResource("/Visual/images/list-icon-png_265066__1_-removebg-preview.png")));
-		button_4.setBounds(486, 268, 154, 114);
+		button_4.setBounds(699, 336, 154, 114);
 		contentPane.add(button_4);
 		
 		JLabel lblNewLabel = new JLabel("Agregar Cita");
 		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblNewLabel.setBounds(286, 86, 98, 20);
+		lblNewLabel.setBounds(499, 154, 98, 20);
 		contentPane.add(lblNewLabel);
 		
 		JLabel lblAgregarPaciente = new JLabel("Agregar Paciente");
 		lblAgregarPaciente.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblAgregarPaciente.setBounds(269, 234, 141, 20);
+		lblAgregarPaciente.setBounds(482, 302, 141, 20);
 		contentPane.add(lblAgregarPaciente);
 		
 		JLabel lblNewLabel_1 = new JLabel("Listar Citas\r\n");
 		lblNewLabel_1.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblNewLabel_1.setBounds(517, 86, 91, 20);
+		lblNewLabel_1.setBounds(730, 154, 91, 20);
 		contentPane.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Listar Pacientes");
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 18));
-		lblNewLabel_2.setBounds(496, 234, 125, 20);
+		lblNewLabel_2.setBounds(709, 302, 125, 20);
 		contentPane.add(lblNewLabel_2);
 	}
-
 }
