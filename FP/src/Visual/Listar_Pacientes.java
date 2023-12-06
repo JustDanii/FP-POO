@@ -7,10 +7,13 @@ import javax.swing.JButton;
 import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 public class Listar_Pacientes extends JDialog {
 
 	private final JPanel contentPanel = new JPanel();
+	private JTable table;
 
 	/**
 	 * Launch the application.
@@ -35,9 +38,12 @@ public class Listar_Pacientes extends JDialog {
 		getContentPane().add(contentPanel, BorderLayout.CENTER);
 		contentPanel.setLayout(new BorderLayout(0, 0));
 		{
-			JPanel panel = new JPanel();
-			contentPanel.add(panel, BorderLayout.CENTER);
-			panel.setLayout(new BorderLayout(0, 0));
+			JScrollPane scrollPane = new JScrollPane();
+			contentPanel.add(scrollPane, BorderLayout.CENTER);
+			{
+				table = new JTable();
+				scrollPane.setViewportView(table);
+			}
 		}
 		{
 			JPanel buttonPane = new JPanel();

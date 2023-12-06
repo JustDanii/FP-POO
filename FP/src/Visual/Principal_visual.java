@@ -18,6 +18,7 @@ import javax.swing.JTextField;
 import javax.swing.JTextPane;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Window.Type;
 
 
 public class Principal_visual extends JFrame {
@@ -25,7 +26,7 @@ public class Principal_visual extends JFrame {
 	private JPanel contentPane;
 
 	
-	//cambios
+	//cam
 	
 	
 	/**
@@ -48,15 +49,16 @@ public class Principal_visual extends JFrame {
 	 * Create the frame.
 	 */
 	public Principal_visual() {
-		setTitle("Principal");
 		setType(Type.UTILITY);
 		setResizable(false);
+		setTitle("Principal");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 771, 439);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		setLocationRelativeTo(null);
 		
 		
 		Panel panel = new Panel();
@@ -103,7 +105,7 @@ public class Principal_visual extends JFrame {
 		btnNewButton_2.setBackground(new Color(255, 0, 0));
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				login log = new login();
+				Login log = new Login();
 				log.setVisible(false);
 				dispose();
 			}

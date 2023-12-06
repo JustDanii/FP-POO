@@ -8,6 +8,8 @@ import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.Color;
+import java.awt.Dimension;
+
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBox;
 import javax.swing.JPasswordField;
@@ -17,6 +19,9 @@ import java.awt.event.ActionEvent;
 
 public class Login extends JFrame {
 
+	
+	//cam
+	private Dimension dim;
 	private JPanel contentPane;
 	private JTextField tx_user;
 	private JPasswordField pf_login;
@@ -41,7 +46,7 @@ public class Login extends JFrame {
 	 * Create the frame.
 	 */
 	public Login() {
-		setAutoRequestFocus(false);
+		setAutoRequestFocus(false); 
 		setType(Type.UTILITY);
 		setTitle("LOGIN");
 		setResizable(false);
@@ -52,6 +57,7 @@ public class Login extends JFrame {
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
+		setLocationRelativeTo(null);
 		
 		tx_user = new JTextField();
 		tx_user.setBounds(154, 127, 163, 33);

@@ -8,10 +8,9 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTable;
+import javax.swing.JScrollPane;
 
 public class Lista_Citas extends JDialog {
-
-	private final JPanel contentPanel = new JPanel();
 	private JTable table;
 
 	/**
@@ -33,13 +32,6 @@ public class Lista_Citas extends JDialog {
 	public Lista_Citas() {
 		setBounds(100, 100, 450, 300);
 		getContentPane().setLayout(new BorderLayout());
-		contentPanel.setBorder(new EmptyBorder(5, 5, 5, 5));
-		getContentPane().add(contentPanel, BorderLayout.CENTER);
-		contentPanel.setLayout(new BorderLayout(0, 0));
-		{
-			table = new JTable();
-			contentPanel.add(table, BorderLayout.CENTER);
-		}
 		{
 			JPanel buttonPane = new JPanel();
 			buttonPane.setLayout(new FlowLayout(FlowLayout.RIGHT));
@@ -54,6 +46,14 @@ public class Lista_Citas extends JDialog {
 				JButton cancelButton = new JButton("Cancel");
 				cancelButton.setActionCommand("Cancel");
 				buttonPane.add(cancelButton);
+			}
+		}
+		{
+			JScrollPane scrollPane = new JScrollPane();
+			getContentPane().add(scrollPane, BorderLayout.CENTER);
+			{
+				table = new JTable();
+				scrollPane.setViewportView(table);
 			}
 		}
 	}

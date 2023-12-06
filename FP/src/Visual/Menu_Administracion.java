@@ -14,6 +14,7 @@ import java.awt.Font;
 import javax.swing.ImageIcon;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.SwingConstants;
 
 public class Menu_Administracion extends JFrame {
 
@@ -48,6 +49,7 @@ public class Menu_Administracion extends JFrame {
 		contentPane.setBorder(new TitledBorder(null, "", TitledBorder.LEADING, TitledBorder.TOP, null, null));
 		setContentPane(contentPane);
 		contentPane.setLayout(new BorderLayout(0, 0));
+		setLocationRelativeTo(null);
 		
 		JPanel panel = new JPanel();
 		contentPane.add(panel, BorderLayout.CENTER);
