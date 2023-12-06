@@ -60,7 +60,7 @@ public class Principal_visual extends JFrame {
 		
 		
 		Panel panel = new Panel();
-		panel.setBackground(new Color(70, 130, 180));
+		panel.setBackground(new Color(64, 224, 208));
 		panel.setBounds(0, 0, 765, 80);
 		contentPane.add(panel);
 		panel.setLayout(null);
@@ -74,27 +74,27 @@ public class Principal_visual extends JFrame {
 		JTextPane txtpnCodigo = new JTextPane();
 		txtpnCodigo.setEditable(false);
 		txtpnCodigo.setText("Codigo:");
-		txtpnCodigo.setBackground(new Color(70, 130, 180));
+		txtpnCodigo.setBackground(new Color(64, 224, 208));
 		txtpnCodigo.setBounds(135, 16, 133, 26);
 		panel.add(txtpnCodigo);
 		
 		JTextPane textPane_1 = new JTextPane();
 		textPane_1.setEditable(false);
 		textPane_1.setForeground(new Color(0, 0, 0));
-		textPane_1.setBackground(new Color(70, 130, 180));
+		textPane_1.setBackground(new Color(64, 224, 208));
 		textPane_1.setBounds(135, 38, 133, 26);
 		panel.add(textPane_1);
 		
 		JTextPane txtpnNombre = new JTextPane();
 		txtpnNombre.setEditable(false);
 		txtpnNombre.setText("Nombre:");
-		txtpnNombre.setBackground(new Color(70, 130, 180));
+		txtpnNombre.setBackground(new Color(64, 224, 208));
 		txtpnNombre.setBounds(308, 16, 133, 26);
 		panel.add(txtpnNombre);
 		
 		JTextPane txtpnMorfe = new JTextPane();
 		txtpnMorfe.setEditable(false);
-		txtpnMorfe.setBackground(new Color(70, 130, 180));
+		txtpnMorfe.setBackground(new Color(64, 224, 208));
 		txtpnMorfe.setBounds(308, 38, 116, 26);
 		panel.add(txtpnMorfe);
 		
@@ -124,18 +124,20 @@ public class Principal_visual extends JFrame {
 				admin.setVisible(true);
 			}
 		});
-		btnNewButton_1.setBackground(new Color(250, 250, 210));
-		btnNewButton_1.setBounds(0, 193, 141, 29);
+		btnNewButton_1.setBackground(new Color(64, 224, 208));
+		btnNewButton_1.setBounds(0, 161, 141, 29);
 		panel_1.add(btnNewButton_1);
 		
 		JButton btnConsulta = new JButton("Consulta");
-		btnConsulta.setBackground(new Color(250, 250, 210));
-		btnConsulta.setBounds(0, 148, 141, 29);
+		btnConsulta.setBackground(new Color(64, 224, 208));
+		btnConsulta.setBounds(0, 105, 141, 29);
 		panel_1.add(btnConsulta);
 		
 		JButton btnNewButton = new JButton("");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				Crear_Cita cita = new Crear_Cita();
+				cita.setVisible(true);
 			}
 		});
 		btnNewButton.setIcon(new ImageIcon(Principal_visual.class.getResource("/Visual/images/6711415 (1).png")));

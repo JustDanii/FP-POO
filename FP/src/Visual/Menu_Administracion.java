@@ -54,11 +54,23 @@ public class Menu_Administracion extends JFrame {
 		panel.setLayout(null);
 		
 		JButton btnNewButton = new JButton("");
+		btnNewButton.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Crear_Medico med = new Crear_Medico();
+				med.setVisible(true);
+			}
+		});
 		btnNewButton.setIcon(new ImageIcon(Menu_Administracion.class.getResource("/Visual/images/pngtree-vector-add-icon-png-image_4184841__1_-removebg-preview.png")));
 		btnNewButton.setBounds(159, 29, 115, 85);
 		panel.add(btnNewButton);
 		
 		JButton button = new JButton("");
+		button.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Crear_Vacuna vac = new Crear_Vacuna();
+				vac.setVisible(true);
+			}
+		});
 		button.setIcon(new ImageIcon(Menu_Administracion.class.getResource("/Visual/images/pngtree-vector-add-icon-png-image_4184841__1_-removebg-preview.png")));
 		button.setBounds(289, 29, 115, 85);
 		panel.add(button);
@@ -116,6 +128,12 @@ public class Menu_Administracion extends JFrame {
 		panel.add(lblNewLabel_3);
 		
 		JButton button_1 = new JButton("");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				Crear_Enfermedad enf = new Crear_Enfermedad();
+				enf.setVisible(true);
+			}
+		});
 		button_1.setIcon(new ImageIcon(Menu_Administracion.class.getResource("/Visual/images/pngtree-vector-add-icon-png-image_4184841__1_-removebg-preview.png")));
 		button_1.setBounds(224, 154, 115, 85);
 		panel.add(button_1);
