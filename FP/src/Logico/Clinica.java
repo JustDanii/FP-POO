@@ -65,11 +65,12 @@ public class Clinica {
 		int i = 0;
 		boolean encontrado = false;
 			for (Doctor doctor : doc) {
-				if (doctor.id.equalsIgnoreCase(code)){
+				if (((String) doctor.id).equalsIgnoreCase(code)){
 	            aux = doctor;
 			    encontrado = true;
-	        }		
-		return aux;
+	         }		
+			}
+			return aux;
 	}
 	
 	

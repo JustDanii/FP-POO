@@ -3,6 +3,7 @@ package Logico;
 public class Doctor extends Trabajador {
 	
 	private String Especialidad;
+	public Object id;
 
 	public Doctor(String code, String password, String especialidad) {
 		super(code, password);

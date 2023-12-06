@@ -3,6 +3,7 @@
 	<name>FP</name>
 	<comment></comment>
 	<projects>
+		<project>FP-POO</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

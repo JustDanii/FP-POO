@@ -2,14 +2,20 @@ package Visual;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Logico.Admin;
+import Logico.Doc1;
+import Logico.Sec1;
+import Logico.Trabajador;
+
 import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.JButton;
 import java.awt.Color;
 import javax.swing.ImageIcon;
-import javax.swing.JCheckBox;
 import javax.swing.JPasswordField;
 import java.awt.Button;
 import java.awt.event.ActionListener;
@@ -64,12 +70,34 @@ public class Login extends JFrame {
 		
 		Button btn_login = new Button("LOGIN");
 		btn_login.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				
-				P_visual p_visual = new P_visual();
-				p_visual.setVisible(true);
-			}
+		    public void actionPerformed(ActionEvent e) {
+
+		        String uname = tx_user.getText();
+		        String pass = pf_login.getText();
+
+		        if (uname.isEmpty() || pass.isEmpty()) {
+		            JOptionPane.showMessageDialog(null, "El campo de usuario o la contraseña está vacío.");
+		        } else {
+		            Trabajador trabajador = null;
+
+		            if (uname.equals("Admin") && pass.equals("123")) {
+		                trabajador = new Admin(uname, pass);
+		            } else if (uname.equals("Doc1") && pass.equals("123")) {
+		                trabajador = new Doc1(uname, pass);
+		            } else if (uname.equals("Sec1") && pass.equals("123")) {
+		                trabajador = new Sec1(uname, pass);
+		            }
+
+		            if (trabajador != null) {
+		                dispose();
+
+		                P_visual p_visual = new P_visual();
+		                p_visual.setVisible(true);
+		            } else {
+		                JOptionPane.showMessageDialog(null, "Inicio de sesión fallido.");
+		            }
+		        }
+		    }
 		});
 		btn_login.setForeground(new Color(240, 248, 255));
 		btn_login.setFont(new Font("Times New Roman", Font.BOLD, 16));
