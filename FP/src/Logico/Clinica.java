@@ -4,24 +4,41 @@ import java.util.ArrayList;
 
 public class Clinica {
 
+	private ArrayList<Persona>per;
 	private ArrayList<Paciente>pac;
-	private ArrayList<Doctor>doc;
 	private ArrayList<Viviendas>viv;
 	private ArrayList<Vacuna>vac;//Vacunas Disponibles
+	private ArrayList<Enfermedad>enf;
+	private ArrayList<Cita>citas;
 	private static Clinica cli;
 	
 	public static Clinica getInstance(){
 		   if(cli == null){
-			 cli = new Clinica();  
-		   } 	   
+			   cli = new Clinica();
+		   }   
 		   return cli;
 		}
-	
-	public Clinica() {
+
+
+	public Clinica(ArrayList<Persona> per, ArrayList<Paciente> pac, ArrayList<Viviendas> viv, ArrayList<Vacuna> vac,
+			ArrayList<Enfermedad> enf, ArrayList<Cita> citas) {
 		super();
-		this.pac = new ArrayList<Paciente>();   
-		this.doc = new ArrayList<Doctor>();
-		this.viv = new ArrayList<Viviendas>();
+		this.per = per;
+		this.pac = pac;
+		this.viv = viv;
+		this.vac = vac;
+		this.enf = enf;
+		this.citas = citas;
+	}
+
+
+	public ArrayList<Persona> getPer() {
+		return per;
+	}
+
+
+	public void setPer(ArrayList<Persona> per) {
+		this.per = per;
 	}
 
 
@@ -29,35 +46,61 @@ public class Clinica {
 		return pac;
 	}
 
+
 	public void setPac(ArrayList<Paciente> pac) {
 		this.pac = pac;
 	}
 
-	public ArrayList<Doctor> getDoc() {
-		return doc;
-	}
-
-	public void setDoc(ArrayList<Doctor> doc) {
-		this.doc = doc;
-	}
 
 	public ArrayList<Viviendas> getViv() {
 		return viv;
 	}
 
+
 	public void setViv(ArrayList<Viviendas> viv) {
 		this.viv = viv;
 	}
+
+
+	public ArrayList<Vacuna> getVac() {
+		return vac;
+	}
+
+
+	public void setVac(ArrayList<Vacuna> vac) {
+		this.vac = vac;
+	}
+
+
+	public ArrayList<Enfermedad> getEnf() {
+		return enf;
+	}
+
+
+	public void setEnf(ArrayList<Enfermedad> enf) {
+		this.enf = enf;
+	}
+
+
+	public ArrayList<Cita> getCitas() {
+		return citas;
+	}
+
+
+	public void setCitas(ArrayList<Cita> citas) {
+		this.citas = citas;
+	}
+
 
 	public static Clinica getCli() {
 		return cli;
 	}
 
+
 	public static void setCli(Clinica cli) {
 		Clinica.cli = cli;
 	}
-	
-	
+
 
 	public Doctor obtenerDoctorbyCode(String code) {
 		
@@ -65,15 +108,15 @@ public class Clinica {
 		int i = 0;
 		boolean encontrado = false;
 			for (Doctor doctor : doc) {
-				if (doctor.id.equalsIgnoreCase(code)){
+				if (((String) doctor.id).equalsIgnoreCase(code)){
 	            aux = doctor;
 			    encontrado = true;
-	        }		
-		return aux;
+	         }		
+			}
+			return aux;
 	}
 	
-	
-	
+
 	public Paciente obtenerPacientebyCode(String code) {
 		
 		Paciente aux = null;
@@ -110,12 +153,30 @@ public class Clinica {
     public static void addPaciente(Paciente paciente) {
         getInstance().pac.add(paciente);
     }
-    public static void addDoctor(Doctor doctor) {
-        getInstance().doc.add(doctor);
+    public static void addPersona(Persona persona) {
+        getInstance().per.add(persona);
     }
     public static void addVivienda(Viviendas vivienda) {
         getInstance().viv.add(vivienda);
     }
+    
+    public Trabajador getTrabajadorByCode(String code) {
+		
+    	Trabajador aux = null;
+		int i = 0;
+			for (Persona persona : per) {
+				if (persona instanceof Trabajador && persona.getId().equalsIgnoreCase(code)){
+		            aux = (Trabajador)persona; 
+				}
+			}
+    	
+    	return aux;
+    	
+    	
+    }
+    
+    
+    
     
     
 

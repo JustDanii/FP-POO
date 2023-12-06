@@ -4,8 +4,9 @@ public class Doctor extends Trabajador {
 	
 	private String Especialidad;
 
-	public Doctor(String code, String password, String especialidad) {
-		super(code, password);
+	public Doctor(String nombre, String id, int numeroTelefonico, String code, String password, int role,
+			String especialidad) {
+		super(nombre, id, numeroTelefonico, code, password, role);
 		Especialidad = especialidad;
 	}
 
@@ -16,5 +17,8 @@ public class Doctor extends Trabajador {
 	public void setEspecialidad(String especialidad) {
 		Especialidad = especialidad;
 	}
+	
+
+	
 	
 }

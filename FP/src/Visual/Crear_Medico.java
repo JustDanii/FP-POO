@@ -93,6 +93,7 @@ public class Crear_Medico extends JDialog {
 			}
 			{
 				textField = new JTextField();
+				textField.setEnabled(true);
 				textField.setBounds(81, 109, 129, 26);
 				panel.add(textField);
 				textField.setColumns(10);

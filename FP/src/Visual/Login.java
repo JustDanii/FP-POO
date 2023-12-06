@@ -1,9 +1,19 @@
+
 package Visual;
 
 import java.awt.EventQueue;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Logico.Admin;
+import Logico.Clinica;
+import Logico.Doc1;
+import Logico.Persona;
+import Logico.Sec1;
+import Logico.Trabajador;
+
 import javax.swing.JTextField;
 import java.awt.Font;
 import javax.swing.JButton;
@@ -11,7 +21,6 @@ import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.ImageIcon;
-import javax.swing.JCheckBox;
 import javax.swing.JPasswordField;
 import java.awt.Button;
 import java.awt.event.ActionListener;
@@ -20,6 +29,8 @@ import java.awt.event.ActionEvent;
 public class Login extends JFrame {
 
 	
+	public static int role = 0;
+	public static Persona user = null;
 	//cam
 	private Dimension dim;
 	private JPanel contentPane;
@@ -70,12 +81,33 @@ public class Login extends JFrame {
 		
 		Button btn_login = new Button("LOGIN");
 		btn_login.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				dispose();
-				
-				Principal_visual principal_visual = new Principal_visual();
-				principal_visual.setVisible(true);
-			}
+		    public void actionPerformed(ActionEvent e) {
+
+		        String uname = tx_user.getText();
+		        String pass = pf_login.getText();
+		        Trabajador aux = null;
+		       // int role = 0; 
+		        	
+		        if (uname.isEmpty() || pass.isEmpty()) {
+		            JOptionPane.showMessageDialog(null, "El campo de usuario o la contraseña está vacío.");
+		        } else {
+		            Trabajador trabajador = null;
+
+		            if( Clinica.getInstance().getTrabajadorByCode(uname) != null ) {
+		            	role = Clinica.getInstance().getTrabajadorByCode(uname).getRole();
+		            	user = Clinica.getInstance().getTrabajadorByCode(uname);
+		       		}
+
+		            if (trabajador != null) {
+		                dispose();
+
+		                Principal_visual p_visual = new Principal_visual(trabajador);
+		                p_visual.setVisible(true);
+		            } else {
+		                JOptionPane.showMessageDialog(null, "Inicio de sesión fallido.");
+		            }
+		        }
+		    }
 		});
 		btn_login.setForeground(new Color(240, 248, 255));
 		btn_login.setFont(new Font("Times New Roman", Font.BOLD, 16));
@@ -86,7 +118,7 @@ public class Login extends JFrame {
 		JButton btnpass = new JButton("");
 		btnpass.setEnabled(false);
 		btnpass.setBackground(new Color(128, 0, 0));
-		btnpass.setIcon(new ImageIcon("C:\\Users\\Mr\\git\\ProyectoFinal\\FinalProyect\\src\\images\\llave.png"));
+		btnpass.setIcon(new ImageIcon(Login.class.getResource("/Visual/images/llave.png")));
 		btnpass.setBounds(70, 182, 50, 50);
 		contentPane.add(btnpass);
 		
@@ -94,7 +126,7 @@ public class Login extends JFrame {
 		btn_user.setEnabled(false);
 		btn_user.setSelectedIcon(new ImageIcon("C:\\Users\\Mr\\Downloads\\avatar (1).png"));
 		btn_user.setForeground(new Color(0, 0, 0));
-		btn_user.setIcon(new ImageIcon("C:\\Users\\Mr\\git\\ProyectoFinal\\FinalProyect\\src\\images\\avatar (1).png"));
+		btn_user.setIcon(new ImageIcon(Login.class.getResource("/Visual/images/avatar (1).png")));
 		btn_user.setBackground(new Color(128, 0, 0));
 		btn_user.setBounds(70, 116, 50, 50);
 		contentPane.add(btn_user);
@@ -102,8 +134,10 @@ public class Login extends JFrame {
 		JButton btn_icon = new JButton("");
 		btn_icon.setForeground(new Color(30, 144, 255));
 		btn_icon.setBackground(new Color(30, 144, 255));
-		btn_icon.setIcon(new ImageIcon("C:\\Users\\Mr\\git\\ProyectoFinal\\FinalProyect\\src\\images\\usuario (1).png"));
+		btn_icon.setIcon(new ImageIcon(Login.class.getResource("/Visual/images/usuario (1).png")));
 		btn_icon.setBounds(149, 11, 97, 82);
 		contentPane.add(btn_icon);
 	}
+
+
 }

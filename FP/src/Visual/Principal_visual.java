@@ -4,6 +4,9 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Logico.Persona;
+
 import java.awt.Panel;
 import java.awt.Color;
 import javax.swing.JMenuItem;
@@ -22,6 +25,8 @@ import java.awt.Window.Type;
 
 
 public class Principal_visual extends JFrame {
+	
+	private int Role; // 0. Admin 1. Doctor 2. Secretaria
 
 	private JPanel contentPane;
 
@@ -36,7 +41,7 @@ public class Principal_visual extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Principal_visual frame = new Principal_visual();
+					Principal_visual frame = new Principal_visual(null);
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -48,7 +53,7 @@ public class Principal_visual extends JFrame {
 	/**
 	 * Create the frame.
 	 */
-	public Principal_visual() {
+	public Principal_visual(Persona persona) {
 		setType(Type.UTILITY);
 		setResizable(false);
 		setTitle("Principal");
@@ -59,6 +64,10 @@ public class Principal_visual extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		setLocationRelativeTo(null);
+		
+		//Role_Assing(){
+			
+		}
 		
 		
 		Panel panel = new Panel();
@@ -82,6 +91,7 @@ public class Principal_visual extends JFrame {
 		
 		JTextPane textPane_1 = new JTextPane();
 		textPane_1.setEditable(false);
+		textPane_1.setText("COD-"+Login.user.getId());
 		textPane_1.setForeground(new Color(0, 0, 0));
 		textPane_1.setBackground(new Color(64, 224, 208));
 		textPane_1.setBounds(135, 38, 133, 26);
@@ -96,6 +106,7 @@ public class Principal_visual extends JFrame {
 		
 		JTextPane txtpnMorfe = new JTextPane();
 		txtpnMorfe.setEditable(false);
+		txtpnMorfe.setText(""+Login.user.getNombre());
 		txtpnMorfe.setBackground(new Color(64, 224, 208));
 		txtpnMorfe.setBounds(308, 38, 116, 26);
 		panel.add(txtpnMorfe);
@@ -106,8 +117,8 @@ public class Principal_visual extends JFrame {
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				Login log = new Login();
-				log.setVisible(false);
-				dispose();
+				log.setVisible(true);
+				//setVisble(false);
 			}
 		});
 		btnNewButton_2.setBounds(600, 25, 133, 29);
@@ -133,8 +144,8 @@ public class Principal_visual extends JFrame {
 		JButton btnConsulta = new JButton("Consulta");
 		btnConsulta.setBackground(new Color(64, 224, 208));
 		btnConsulta.setBounds(0, 105, 141, 29);
-		panel_1.add(btnConsulta);
-		
+		panel_1.add(btnConsulta)
+	
 		JButton btnNewButton = new JButton("");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -192,6 +203,19 @@ public class Principal_visual extends JFrame {
 		lblNewLabel_2.setFont(new Font("Tahoma", Font.PLAIN, 18));
 		lblNewLabel_2.setBounds(496, 234, 125, 20);
 		contentPane.add(lblNewLabel_2);
+		
+		if(Login.role == 0) {
+			
+		}if(Login.role == 1) {
+			btnNewButton_1.setEnabled(false);
+		}if(Login.role == 2) {
+			btnConsulta.setEnabled(false);
+			btnNewButton_1.setEnabled(false);
+		}
+
+	private void Role_Assing(Persona persona) {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
